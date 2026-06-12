@@ -158,21 +158,20 @@ export default async function TradePage({ params }: { params: { id: string } }) 
       Screenshots
     </h2>
 
-    <div className="grid grid-cols-1 gap-4">
+    <div className="space-y-4">
       {trade.entryScreenshot && (
         <div className="tv-card overflow-hidden">
           <div className="px-3 py-2 text-xs text-tv-muted border-b border-tv-border">
             Entry
           </div>
 
-          <div className="relative w-full h-[600px]">
-            <Image
-              src={trade.entryScreenshot}
-              alt="Entry"
-              fill
-              className="object-contain bg-black"
-            />
-          </div>
+          <Image
+            src={trade.entryScreenshot}
+            alt="Entry"
+            width={1920}
+            height={1080}
+            className="w-full h-auto"
+          />
         </div>
       )}
 
@@ -182,14 +181,13 @@ export default async function TradePage({ params }: { params: { id: string } }) 
             Exit
           </div>
 
-          <div className="relative w-full h-[600px]">
-            <Image
-              src={trade.exitScreenshot}
-              alt="Exit"
-              fill
-              className="object-contain bg-black"
-            />
-          </div>
+          <Image
+            src={trade.exitScreenshot}
+            alt="Exit"
+            width={1920}
+            height={1080}
+            className="w-full h-auto"
+          />
         </div>
       )}
 
@@ -199,20 +197,18 @@ export default async function TradePage({ params }: { params: { id: string } }) 
             Additional #{i + 1}
           </div>
 
-          <div className="relative w-full h-[600px]">
-            <Image
-              src={url}
-              alt={`Extra ${i + 1}`}
-              fill
-              className="object-contain bg-black"
-            />
-          </div>
+          <Image
+            src={url}
+            alt={`Extra ${i + 1}`}
+            width={1920}
+            height={1080}
+            className="w-full h-auto"
+          />
         </div>
       ))}
     </div>
   </div>
 )}
-
       {/* Analysis Blocks */}
       <div className="space-y-3">
         <h2 className="text-sm font-semibold text-tv-muted uppercase tracking-widest">Trade Analysis</h2>
