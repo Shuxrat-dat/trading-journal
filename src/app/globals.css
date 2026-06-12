@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tv-bg: #131722;
+  --tv-surface: #1e222d;
+  --tv-border: #2a2e39;
+  --tv-text: #d1d4dc;
+  --tv-muted: #787b86;
+  --tv-green: #26a69a;
+  --tv-red: #ef5350;
+  --tv-accent: #2962ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--tv-bg);
+  color: var(--tv-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--tv-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tv-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tv-muted);
+}
+
+/* Form elements reset to match dark theme */
+input, textarea, select {
+  background-color: var(--tv-bg);
+  color: var(--tv-text);
+  border: 1px solid var(--tv-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--tv-accent);
+  box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.15);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Number inputs */
+input[type="number"] {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Select dropdown */
+select option {
+  background: var(--tv-surface);
+  color: var(--tv-text);
+}
+
+/* Utility classes */
+.tv-card {
+  background: var(--tv-surface);
+  border: 1px solid var(--tv-border);
+  border-radius: 8px;
+}
+
+.tv-card:hover {
+  border-color: #3d4157;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-green {
+  color: var(--tv-green);
+}
+
+.text-red {
+  color: var(--tv-red);
+}
+
+.badge-win {
+  background: rgba(38, 166, 154, 0.15);
+  color: var(--tv-green);
+  border: 1px solid rgba(38, 166, 154, 0.3);
+}
+
+.badge-loss {
+  background: rgba(239, 83, 80, 0.15);
+  color: var(--tv-red);
+  border: 1px solid rgba(239, 83, 80, 0.3);
+}
+
+.badge-be {
+  background: rgba(240, 185, 11, 0.15);
+  color: #f0b90b;
+  border: 1px solid rgba(240, 185, 11, 0.3);
+}
+
+/* Scrollbar on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tv-border) var(--tv-bg);
+}
