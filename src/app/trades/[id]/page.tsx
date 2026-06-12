@@ -151,40 +151,67 @@ export default async function TradePage({ params }: { params: { id: string } }) 
         </div>
       </div>
 
-      {/* Screenshots */}
-      {(trade.entryScreenshot || trade.exitScreenshot || extraScreenshots.length > 0) && (
-        <div className="space-y-3">
-          <h2 className="text-sm font-semibold text-tv-muted uppercase tracking-widest">Screenshots</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {trade.entryScreenshot && (
-              <div className="tv-card overflow-hidden">
-                <div className="px-3 py-2 text-xs text-tv-muted border-b border-tv-border">Entry</div>
-                <div className="relative w-full h-48">
-                  <Image src={trade.entryScreenshot} alt="Entry" fill className="object-contain bg-black" />
-                </div>
-              </div>
-            )}
-            {trade.exitScreenshot && (
-              <div className="tv-card overflow-hidden">
-                <div className="px-3 py-2 text-xs text-tv-muted border-b border-tv-border">Exit</div>
-                <div className="relative w-full h-48">
-                  <Image src={trade.exitScreenshot} alt="Exit" fill className="object-contain bg-black" />
-                </div>
-              </div>
-            )}
-            {extraScreenshots.map((url, i) => (
-              <div key={i} className="tv-card overflow-hidden">
-                <div className="px-3 py-2 text-xs text-tv-muted border-b border-tv-border">
-                  Additional #{i + 1}
-                </div>
-                <div className="relative w-full h-48">
-                  <Image src={url} alt={`Extra ${i + 1}`} fill className="object-contain bg-black" />
-                </div>
-              </div>
-            ))}
+     {/* Screenshots */}
+{(trade.entryScreenshot || trade.exitScreenshot || extraScreenshots.length > 0) && (
+  <div className="space-y-3">
+    <h2 className="text-sm font-semibold text-tv-muted uppercase tracking-widest">
+      Screenshots
+    </h2>
+
+    <div className="grid grid-cols-1 gap-4">
+      {trade.entryScreenshot && (
+        <div className="tv-card overflow-hidden">
+          <div className="px-3 py-2 text-xs text-tv-muted border-b border-tv-border">
+            Entry
+          </div>
+
+          <div className="relative w-full h-[600px]">
+            <Image
+              src={trade.entryScreenshot}
+              alt="Entry"
+              fill
+              className="object-contain bg-black"
+            />
           </div>
         </div>
       )}
+
+      {trade.exitScreenshot && (
+        <div className="tv-card overflow-hidden">
+          <div className="px-3 py-2 text-xs text-tv-muted border-b border-tv-border">
+            Exit
+          </div>
+
+          <div className="relative w-full h-[600px]">
+            <Image
+              src={trade.exitScreenshot}
+              alt="Exit"
+              fill
+              className="object-contain bg-black"
+            />
+          </div>
+        </div>
+      )}
+
+      {extraScreenshots.map((url, i) => (
+        <div key={i} className="tv-card overflow-hidden">
+          <div className="px-3 py-2 text-xs text-tv-muted border-b border-tv-border">
+            Additional #{i + 1}
+          </div>
+
+          <div className="relative w-full h-[600px]">
+            <Image
+              src={url}
+              alt={`Extra ${i + 1}`}
+              fill
+              className="object-contain bg-black"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
       {/* Analysis Blocks */}
       <div className="space-y-3">
