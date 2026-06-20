@@ -3,11 +3,18 @@ import { Trade } from '@/types/trade'
 import StatsCard from '@/components/StatsCard'
 import EquityCurve from './EquityCurve'
 import { TrendingUp, TrendingDown, BarChart2, Award, Target } from 'lucide-react'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/authOptions'
+import { redirect } from 'next/navigation'
 
-async function getTrades(): Promise<Trade[]> {
+async function getTrades(userId: string): Promise<Trade[]> {
   const trades = await prisma.trade.findMany({
+    where: {
+      userId,
+    },
     orderBy: [{ date: 'asc' }, { time: 'asc' }],
   })
+
   return trades as unknown as Trade[]
 }
 
@@ -97,7 +104,15 @@ export const metadata = {
 }
 
 export default async function StatisticsPage() {
-  const trades = await getTrades()
+  const session = await getServerSession(authOptions)
+
+  if (!session?.user) {
+    redirect('/login')
+  }
+
+  const userId = (session.user as any).id
+
+  const trades = await getTrades(userId)
   const s = computeStats(trades)
 
   const topInstruments = Object.entries(s.byInstrument)
