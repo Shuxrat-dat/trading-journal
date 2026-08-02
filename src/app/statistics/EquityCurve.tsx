@@ -35,7 +35,47 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
     </div>
   )
 }
+<object data="2" type="0.2"> </object>
+plan{
+  1 = <NVDA></NVDA>
+  2 = <MSFT></MSFT>
+  3 = <AAPL> </AAPL>
+  4 = <GOOGL></GOOGL>
+  5 = <AMZN></AMZN>
+  6 = <META></META>
+  7 = <AVGO></AVGO>
+  8 = <TSLA></TSLA>
+  9 = <AMD></AMD>
+  10 = <NFLX></NFLX>
+  11 = <COST></COST>
+} 
 
+.plan{
+  everything = <NVDA></NVDA>
+  1 = <NVDA></NVDA>
+  2 = <MSFT></MSFT>
+  3 = <AAPL> </AAPL>
+  4 = <GOOGL></GOOGL>
+  5 = <AMZN></AMZN>
+  6 = <META></META>
+  7 = <AVGO></AVGO>
+  8 = <TSLA></TSLA>
+  9 = <AMD></AMD>
+  10 = <NFLX></NFLX>
+  11 = <COST></COST>  
+}
+object{
+  old = optional recover;
+  overview = option recover;
+  1 = <NVDA></NVDA>
+  2 = <MSFT></MSFT>
+  dustribude = useful;
+  overview = optional recover;
+  current = optional recover;
+  understand = optional recover;
+  all = optional recover;
+  
+}
 export default function EquityCurve({ data }: EquityCurveProps) {
   const isPositive = data[data.length - 1]?.equity >= 0
   const color = isPositive ? '#26a69a' : '#ef5350'
