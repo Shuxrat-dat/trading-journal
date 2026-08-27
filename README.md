@@ -6,11 +6,11 @@ The project is designed to help traders record their trades, review their decisi
 
 ## Features
 
-* 📋 **Trade logging** — instrument, direction, entry/exit, risk, P/L and R/R
-* 📸 **Screenshots** — attach entry, exit and setup screenshots to trades
-* 🧠 **Trading psychology** — emotions, entry reasons, mistakes and lessons
-* 📊 **Statistics** — win rate, profit factor, equity curve and max drawdown
-* 🌑 **Dark UI** — TradingView-inspired interface
+* 📋 **Trade logging** - instrument, direction, entry/exit, risk, P/L and R/R
+* 📸 **Screenshots** - attach entry, exit and setup screenshots to trades
+* 🧠 **Trading psychology** - emotions, entry reasons, mistakes and lessons
+* 📊 **Statistics** - win rate, profit factor, equity curve and max drawdown
+* 🌑 **Dark UI** - TradingView-inspired interface
 * 💾 **SQLite + Prisma** — simple local database with no external services
 
 ## Tech Stack
